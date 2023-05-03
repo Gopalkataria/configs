@@ -1,0 +1,20 @@
+#!/bin/bash
+## original work bu Gopal Kataria
+
+title="$(playerctl metadata title | sed 's/\(.\{18\}\).*/\1../')"
+
+
+
+if [[ "$title" == "" ]]; then
+
+## if no title provided then use a hacky way to get file name in vlc	
+	echo  "$(playerctl metadata xesam:url | sed 's/%20/ /g' | sed 's/\%//g' |sed 's/[0-9]//g' | sed 's/\.mp//g' | sed 's/.*\///g' | sed 's/\(.\{18\}\).*/\1../' |  sed 's/$/ • /' )$(pamixer --get-volume)%"
+else 
+### use the provided title if available  
+	echo  "$( echo $title | sed 's/&/and/g' | sed 's/\(.\{18\}\).*/\1../'|  sed 's/$/ • /' )$(pamixer --get-volume)%"
+
+fi 
+
+
+## actual code snippet from reddit 
+# playerctl metadata xesam:url | sed 's/%20/ /g' | sed 's/.*\///g'
