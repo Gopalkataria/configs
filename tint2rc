@@ -1,8 +1,8 @@
-#---- Generated Using tint2conf 3eb8 ----
-# See https://gitlab.com/o9000/tint2/wikis/Configure for 
-# full documentation of the configuration options.
 # Original Work by Gopal Kataria
-#-------------------------------------
+# Generated Using tint2conf 3eb8 
+# See https://gitlab.com/o9000/tint2/wikis/Configure for tint2conf documentation  
+
+
 # Gradients
 # Gradient 1
 gradient = vertical
